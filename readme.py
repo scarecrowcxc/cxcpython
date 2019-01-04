@@ -1,7 +1,5 @@
-<<<<<<< HEAD
 def helloworld:
     print("helloworld !")
-=======
 print 1
 
 def helloworld:
@@ -9,5 +7,4 @@ def helloworld:
 
 
     print("this is feature1")
->>>>>>> feature1
 
