@@ -1,9 +1,9 @@
-from flask import render_template, session, redirectl, url_for, current_app
+from flask import render_template, session, redirect, url_for, current_app, flash
 from . import main
 from .forms import NameForm
 
 
-@mail.route('/', methods=['Get', 'POST'])
+@main.route('/', methods=['Get', 'POST'])
 def index():
     form = NameForm()
     if form.validate_on_submit():
