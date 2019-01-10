@@ -33,10 +33,17 @@ class DevelopmentConfig(Config):
 
 
 # 接下来还需要定义两个类， 用来测试和生产环境的数据库
+class TestingConfig(Config):
+    TESTING = True
+    SQLALCHEMY_DATABASE_URI = os.environ.get('TEST_DATABASE_URL') or \
+            'sqlite:///' + os.path.join(basedir, 'data-test.sqlite')
+
+
 
 
 config = {
     'development': DevelopmentConfig,
+    'testing': TestingConfig,
     'default': DevelopmentConfig,
 }
 
