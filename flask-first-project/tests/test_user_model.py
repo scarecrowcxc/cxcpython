@@ -6,7 +6,7 @@ from app.models import User
 class UserModelTestCase(unittest.TestCase):
     def setUp(self):
         self.app = create_app('testing')
-        self.app_context = self.app.app_context)_
+        self.app_context = self.app.app_context()
         self.app_context.push()
         db.create_all()
 
@@ -21,12 +21,12 @@ class UserModelTestCase(unittest.TestCase):
         self.assertTrue(u.password_hash is not None)
 
     def test_no_password_getter(self):
-        u = Usre(password='cat')
+        u = User(password='cat')
         with self.assertRaises(AttributeError):
             u.password
 
     def test_password_verification(self):
-        u = User(passwrod='cat')
+        u = User(password='cat')
         self.assertTrue(u.verify_password('cat'))
         self.assertFalse(u.verify_password('cat'))
 
