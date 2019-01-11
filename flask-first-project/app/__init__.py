@@ -17,7 +17,7 @@ db = SQLAlchemy()
 # 这个是8.4新添加的  是干什么的都， 还得好好理解
 login_manager = LoginManager()
 login_manager.session_protection = 'strong'
-login_manager.login_login_view = 'auth.login'
+login_manager.login_view = 'auth.login'
 
 
 
